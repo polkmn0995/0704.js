@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="number">숫자를 입력하세요:</label>
+    <input type="number" id="number" />
+    <button onclick="checkNumber()">판별하기</button>
+    <p id="result"></p>
+    <script>
+      function checkNumber() {
+        var numberInput = document.getElementById("number");
+        var number = parseInt(numberInput.value);
+        var resultElement = document.getElementById("result");
+
+        if (number < 0) {
+          resultElement.textContent = "음수입니다";
+        } else if (number > 0) {
+          resultElement.textContent = "양수입니다";
+        } else {
+          resultElement.textContent = "입력한 숫자는 0입니다";
+        }
+      }
+    </script>
+  </body>
+</html>

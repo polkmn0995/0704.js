@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연산자</title>
+  </head>
+  <body>
+    <!-- 논리 연산자 예제 -->
+    <h1>논리 연산자 예제</h1>
+    <label for="age">나이 :</label>
+    <input type="number" id="age" />
+    <label for="hasLicense">운전 면허 여부 :</label>
+    <select name="hasLicense" id="hasLicense">
+      <option value="true">있음</option>
+      <option value="false">없음</option>
+    </select>
+    <label for="hasCar">자동차 소유 여부 :</label>
+    <select name="hasCar" id="hasCar">
+      <option value="true">있음</option>
+      <option value="false">없음</option>
+    </select>
+    <button onclick="checkConditions()">조건 확인</button>
+    <p id="result"></p>
+    <script>
+      // 논리연산자 스크립트
+      function checkConditions() {
+        var age = parseInt(document.getElementById("age").value);
+        var hasLicense = document.getElementById("hasLicense").value === "true";
+        var hasCar = document.getElementById("hasCar").value === "true";
+        var resultElement = document.getElementById("result");
+
+        // AND 연산자 (&&)
+        if (age >= 18 && hasLicense) {
+          resultElement.textContent = "성인이며 운전면허가 있습니다";
+        }
+        // OR 연산자 (||)
+        else if (hasLicense || hasCar) {
+          resultElement.textContent =
+            "운전면허가 있거나 자동차를 소유하고 있습니다";
+        }
+        // NOT 연산자 (!)
+        else {
+          resultElement.textContent = "조건에 맞지 않습니다";
+        }
+      }
+
+      // var userNumber = prompt("숫자를 입력하세요")
+      // if(userNumber !== null){
+      //     // 조건연산자
+      //     (userNumber % 3 === 0) ? alert("3의 배수입니다") : alert ("3의 배수가 아닙니다")
+      // }
+      // else{
+      //     alert("입력이 취소되었습니다")
+      // }
+
+      // // or연산자
+      // var numberOne = prompt("50미만의 숫자를 입력해주세요")
+      // var numberTwo = prompt("50미만의 숫자를 입력해주세요")
+      // if(numberOne < 10 || numberTwo < 10){
+      //     alert("두 개의 숫자 중 최소한 하나의 숫자는 10 미만이군요")
+      // }
+      // else{
+      //     alert("두 개의 숫자 중 10 미만의 수는 없습니다")
+      // }
+
+      // // and연산자
+      // var numberOne = prompt("50미만의 숫자를 입력해주세요")
+      // var numberTwo = prompt("50미만의 숫자를 입력해주세요")
+      // if(numberOne !== null && numberTwo !== null){
+      //     if(numberOne !== "" && numberTwo !== ""){
+      //         if(numberOne < 10 || numberTwo < 10){
+      //             alert("두 개의 숫자 중 최소한 하나의 숫자는 10 미만이군요")
+      //         }
+      //         else{
+      //             alert("두 개의 숫자 중 10 미만의 수는 없습니다")
+      //         }
+      //     }
+      //     else{
+      //         alert("숫자를 입력해주세요")
+      //     }
+      // }
+      // else{
+      //     alert("50 미만의 숫자를 입력해주세요")
+      // }
+    </script>
+  </body>
+</html>
